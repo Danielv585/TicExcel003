@@ -130,9 +130,20 @@ a:focus, button:focus, .tab:focus{outline:3px solid rgba(30,136,229,0.18);outlin
   }
 
   /* CUANDO SE ACTIVA (al presionar el botón) */
-  .main-nav.show {
+
+.header nav{
+  margin-left:auto;
+  gap:12px;
+  align-items:center;
+}
+
+
+
+
+  <!--.main-nav.show {
     display: flex;
-  }
+  }-->
+
 
   /* Estilo de las opciones del menú */
   .main-nav a {
