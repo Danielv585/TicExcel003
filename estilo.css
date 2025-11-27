@@ -131,11 +131,19 @@ a:focus, button:focus, .tab:focus{outline:3px solid rgba(30,136,229,0.18);outlin
 
   /* CUANDO SE ACTIVA (al presionar el botón) */
 
-.header nav{
-  margin-left:auto;
-  gap:12px;
-  align-items:center;
+
+
+
+
+
+
+@media (min-width: 769px){
+  .header nav{
+    display:flex;
+  }
 }
+
+
 
 
 
