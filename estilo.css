@@ -110,19 +110,23 @@ a:focus, button:focus, .tab:focus{outline:3px solid rgba(30,136,229,0.18);outlin
 /* Solo para pantallas móviles */
 @media (max-width: 768px) {
 
-  /* MENÚ oculto inicialmente */
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 70px;
-    right: 15px;
-    width: 220px;
-    padding: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.20);
-    z-index: 9999;
+  /* ESTILOS DEL MENÚ DESPLEGABLE EN CELULAR */
+.main-nav a {
+  font-size: 1rem;
+  padding: 14px 20px;
+  font-weight: 700;
+  color: #0b2540 !important; /* fuerza color oscuro */
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  display: block;
+}
+
+/* Resaltado al tocar */
+.main-nav a:hover {
+  background: #e8f0ff;
+  color: #1e88e5 !important;
+}
+
   }
 
   /* CUANDO SE ACTIVA (al presionar el botón) */
