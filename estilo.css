@@ -94,72 +94,74 @@ footer{max-width:var(--max-width);margin:28px auto 48px auto;padding:10px 18px;c
 /* Accessibility focus */
 a:focus, button:focus, .tab:focus{outline:3px solid rgba(30,136,229,0.18);outline-offset:2px}
 
-/* ====== MENÚ RESPONSIVE CORREGIDO Y MEJORADO ====== */
 
-/* Botón hamburguesa */
+
+/* ====== MENÚ RESPONSIVE CORREGIDO Y FUNCIONAL ====== */
+
+/* Botón hamburguesa (solo móvil) */
 .menu-toggle {
   font-size: 32px;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  display: none; /* solo en móvil */
+  display: none; /* oculto en desktop */
   margin-left: auto;
 }
 
-/* Solo para pantallas móviles */
+/* Desktop: el menú normal se muestra */
+@media(min-width: 769px){
+  .main-nav{
+    display: flex;
+    gap: 12px;
+  }
+}
+
+/* ===== SOLO EN MÓVIL ===== */
 @media (max-width: 768px) {
 
-  /* ESTILOS DEL MENÚ DESPLEGABLE EN CELULAR */
-.main-nav a {
-  font-size: 1rem;
-  padding: 14px 20px;
-  font-weight: 700;
-  color: #0b2540 !important; /* fuerza color oscuro */
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
-  display: block;
-}
-
-/* Resaltado al tocar */
-.main-nav a:hover {
-  background: #e8f0ff;
-  color: #1e88e5 !important;
-}
-
+  /* Ocultar menú inicialmente */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 220px;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+    z-index: 9999;
   }
 
-  /* CUANDO SE ACTIVA (al presionar el botón) */
-
-.main-nav.show {
+  /* Mostrar menú cuando JS agrega `.show` */
+  .main-nav.show {
     display: flex;
   }
 
-  /* Estilo de las opciones del menú */
+  /* Botón hamburguesa visible en móvil */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Estilos de los items del menú desplegado */
   .main-nav a {
     font-size: 1rem;
     padding: 14px 20px;
     font-weight: 700;
-    color: #0b2540 !important;
+    color: #0b2540 !important; /* texto oscuro */
+    background: white;
     border-bottom: 1px solid #e0e0e0;
     display: block;
   }
 
-  /* Último sin borde */
   .main-nav a:last-child {
     border-bottom: none;
   }
 
-  /* Resaltado al pasar el dedo */
   .main-nav a:hover {
-    background: #f0f4ff;
+    background: #e8f0ff;
     color: #1e88e5 !important;
   }
-
-  /* Mostrar botón hamburguesa */
-  .menu-toggle {
-    display: block;
-  }
 }
-
-/* FIN DEL MENÚ CORREGIDO */
